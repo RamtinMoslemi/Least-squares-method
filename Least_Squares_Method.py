@@ -61,7 +61,7 @@ if __name__ == '__main__':
     x = np.array([int(i) for i in input('enter the inputs: ').split()])
     # create the y vector
     y = np.matrix([int(i) for i in input('enter the outputs: ').split()]).transpose()
-    # find f_n for every n
+    # find j-th degree polynomial for every j from 0 to n-1
     for j in range(n):
         Beta, MSE = f(j)
         draw_graph(j, Beta, MSE)
