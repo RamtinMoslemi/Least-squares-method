@@ -44,10 +44,10 @@ def draw_graph(degree, coefficients, mse, rounding_factor=3):
     eq = get_equation_str(degree, coefficients, mse, rounding_factor)
     # add the title to the plot
     plt.title(r'$' + eq + '$')
-    # add the original inputs and outputs to the plot
-    plt.plot(x, y, 'r*')
     # draw the graph of our estimation
     plt.plot(points, get_estimate(degree, coefficients, points))
+    # add the original inputs and outputs to the plot
+    plt.plot(x, y, 'r*')
     # add grid to the plot
     plt.grid()
     # show the plot
