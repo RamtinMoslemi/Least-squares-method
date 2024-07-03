@@ -33,11 +33,11 @@ def get_equation_str(degree, coefficients, mse, rounding_factor):
             eq += 'x^' + str(i)
         if i != degree:
             eq += ' + '
-    eq += 3 * '\;' + 'MSE=' + str(np.round(mse, rounding_factor))
+    eq += ',\\quad MSE=' + str(np.round(mse, rounding_factor))
     return eq
 
 
-def draw_graph(degree, coefficients, mse, rounding_factor=3):
+def draw_graph(degree, coefficients, mse, rounding_factor=3, save=False):
     # set the points up
     points = np.linspace(min(x) - 0.1, max(x) + 0.1, 200)
     # get the equation string
@@ -50,6 +50,9 @@ def draw_graph(degree, coefficients, mse, rounding_factor=3):
     plt.plot(x, y, 'r*')
     # add grid to the plot
     plt.grid()
+    # save the plot
+    if save:
+        plt.savefig(str(eq) + '.png')
     # show the plot
     plt.show()
 
